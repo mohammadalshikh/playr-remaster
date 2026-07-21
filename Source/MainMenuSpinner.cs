@@ -1,0 +1,124 @@
+using UnityEngine;
+
+public class MainMenuSpinner : MonoBehaviour
+{
+	private SpriteText _target;
+
+	private int _targetValue;
+
+	private int _currentValue;
+
+	private int _initialValue;
+
+	private int _speed;
+
+	private bool _flag;
+
+	private int _nextScore;
+
+	private float _countTime;
+
+	private int _timeSpinning;
+
+	private float _speedRate;
+
+	private bool _hasStopped;
+
+	public SpriteText Target
+	{
+		get
+		{
+			return _target;
+		}
+		set
+		{
+			_target = value;
+		}
+	}
+
+	public int TargetValue
+	{
+		get
+		{
+			return _targetValue;
+		}
+		set
+		{
+			_targetValue = value;
+		}
+	}
+
+	public int CurrentValue => _currentValue;
+
+	public int InitialValue
+	{
+		get
+		{
+			return _initialValue;
+		}
+		set
+		{
+			_initialValue = value;
+		}
+	}
+
+	public float Speed
+	{
+		set
+		{
+			_speedRate = value / 100f;
+		}
+	}
+
+	public bool HasStopped => _hasStopped;
+
+	private void Start()
+	{
+		if (_target == null)
+		{
+			_target = base.transform.GetComponent<SpriteText>();
+		}
+		_countTime = 0.05f;
+		_speed = (int)Mathf.Ceil(1f / 30f / _countTime);
+		_target.Text = "0";
+	}
+
+	public void StopRunning()
+	{
+		_hasStopped = true;
+		_flag = false;
+		_currentValue = _targetValue;
+	}
+
+	public void StartRunning()
+	{
+		_hasStopped = false;
+		_flag = true;
+		_currentValue = _initialValue;
+	}
+
+	private int ScoreCounter()
+	{
+		if (_currentValue <= _targetValue)
+		{
+			_currentValue += (int)Mathf.Ceil((float)(_targetValue - _initialValue) * _speedRate) * _speed;
+			_target.Text = _currentValue.ToString("#,##0");
+		}
+		else
+		{
+			_currentValue = _targetValue;
+			_target.Text = _currentValue.ToString("#,##0");
+			_flag = false;
+			_hasStopped = true;
+		}
+		return _currentValue;
+	}
+
+	private void Update()
+	{
+		if (_flag)
+		{
+			ScoreCounter();
+		}
+	}
+}

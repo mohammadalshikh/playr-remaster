@@ -1,0 +1,7 @@
+public enum TRAINING_GROUND_SPRITE_ID
+{
+	DEAN,
+	EXTRA,
+	LAIDLOW,
+	GARY_MAC
+}

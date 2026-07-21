@@ -1,0 +1,7 @@
+public enum DEFENDER_ANIM
+{
+	IDLE,
+	TACKLE,
+	BACKWARD,
+	FORWARD
+}

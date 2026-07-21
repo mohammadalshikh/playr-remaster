@@ -1,0 +1,8 @@
+public enum PLAYER_TALENT
+{
+	NONE,
+	GERRARD,
+	CARRAGHER,
+	HENDERSON,
+	DOWNING
+}

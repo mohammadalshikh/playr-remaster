@@ -1,0 +1,7 @@
+public enum TUTORIAL_TYPE
+{
+	DEFAULT,
+	TRIPLE_HIT,
+	OVER_TRIPLE,
+	BLAST
+}

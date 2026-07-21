@@ -1,0 +1,9 @@
+public enum RPFC_MEMBER_ID
+{
+	RANDOM = -1,
+	DEAN,
+	EXTRA,
+	LAIDLOW,
+	GARY_MAC,
+	N_MEMBERS
+}
