@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -488,7 +488,7 @@ public class Minigame : MonoBehaviour
 		{
 			m_curr_ball.rigidbody.isKinematic = false;
 		}
-		m_curr_ball.active = true;
+		m_curr_ball.SetActive(true);
 		GameData.Ball.enabled = true;
 		GameData.PlayerControl.Reset();
 		GameData.Ball.Reset();

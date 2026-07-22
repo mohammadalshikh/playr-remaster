@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -243,7 +243,7 @@ public class AssetsManager : MonoBehaviour
 		if (asset.obj == null)
 		{
 			Debug.LogError("RequestSuperSprite (" + obj_ref.gameObject.name + ") : request asset not found = " + name);
-			obj_ref.gameObject.active = false;
+			obj_ref.gameObject.SetActive(false);
 			m_asset_request--;
 		}
 		else
@@ -266,7 +266,7 @@ public class AssetsManager : MonoBehaviour
 				}
 				else
 				{
-					obj_ref.gameObject.active = false;
+					obj_ref.gameObject.SetActive(false);
 				}
 				m_asset_request--;
 			}

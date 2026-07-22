@@ -1,0 +1,9 @@
+public enum BONUS_TARGET
+{
+	NONE,
+	MULTIPLIER,
+	TIMER,
+	HEART,
+	SHIELD,
+	CUSTOM_1
+}

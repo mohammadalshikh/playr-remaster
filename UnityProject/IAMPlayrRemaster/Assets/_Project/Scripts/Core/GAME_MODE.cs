@@ -1,0 +1,6 @@
+public enum GAME_MODE
+{
+	NORMAL,
+	TUTORIAL,
+	PRACTICE
+}

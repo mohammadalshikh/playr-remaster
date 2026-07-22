@@ -1,0 +1,5 @@
+public enum CONTROL_SYSTEM
+{
+	STANDARD_SHOOT,
+	FLICK_SHOOT
+}

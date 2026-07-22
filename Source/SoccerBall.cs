@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -216,7 +216,7 @@ public class SoccerBall : MonoBehaviour
 				Transform transform = _currentVisualEffect.transform;
 				transform.localRotation = _cachedTransform.rotation;
 				transform.position = _cachedTransform.position;
-				_currentVisualEffect.active = true;
+				_currentVisualEffect.SetActive(true);
 				base.renderer.material = _lavaMaterial;
 				_currentTrail = _trailEffects[(int)effects];
 				_currentTrail.enabled = true;
@@ -228,7 +228,7 @@ public class SoccerBall : MonoBehaviour
 				base.renderer.material = _cachedMaterial;
 				_currentTrail = _trailEffects[(int)effects];
 				_currentParticleEffect = null;
-				_currentVisualEffect.active = false;
+				_currentVisualEffect.SetActive(false);
 			}
 		}
 	}

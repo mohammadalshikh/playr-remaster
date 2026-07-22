@@ -1,0 +1,5 @@
+public enum ERROR_CODE
+{
+	LOADING = 1,
+	ASSET_BUNDLE_DOWNLOAD
+}

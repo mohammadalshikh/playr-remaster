@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class DisableOnHit : MonoBehaviour
@@ -57,7 +57,7 @@ public class DisableOnHit : MonoBehaviour
 			}
 			else
 			{
-				base.gameObject.active = false;
+				base.gameObject.SetActive(false);
 			}
 		}
 	}

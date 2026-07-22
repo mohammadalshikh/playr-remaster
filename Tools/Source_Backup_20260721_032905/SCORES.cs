@@ -1,0 +1,7 @@
+public enum SCORES
+{
+	BRONZE,
+	SILVER,
+	GOLD,
+	BEAT_SCORE
+}

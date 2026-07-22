@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -66,18 +66,18 @@ public class IntroView : CharacterNotificationView
 		UIManager.instance.RemoveMouseTouchPtrListener(TouchStartScreen);
 		if (GameData.Instance.FirstEverBoot)
 		{
-			titleLogo.gameObject.active = false;
-			tapToStartText.gameObject.active = false;
-			tapToStartTextBG.gameObject.active = false;
+			titleLogo.gameObject.SetActive(false);
+			tapToStartText.gameObject.SetActive(false);
+			tapToStartTextBG.gameObject.SetActive(false);
 			Init("Welcome to River Park FC", string.Empty, string.Empty, CharacterId.Coach);
 			DisplayView(isVisible: true);
 			StartCoroutine(InputDelegate());
 		}
 		else
 		{
-			titleLogo.gameObject.active = false;
-			tapToStartText.gameObject.active = false;
-			tapToStartTextBG.gameObject.active = false;
+			titleLogo.gameObject.SetActive(false);
+			tapToStartText.gameObject.SetActive(false);
+			tapToStartTextBG.gameObject.SetActive(false);
 			if (IntroView.IntroSceneCompleted != null)
 			{
 				IntroView.IntroSceneCompleted();
@@ -124,7 +124,7 @@ public class IntroView : CharacterNotificationView
 		{
 			IntroView.IntroSceneCompleted();
 		}
-		titleLogo.gameObject.active = false;
+		titleLogo.gameObject.SetActive(false);
 	}
 
 	private void OnDisable()

@@ -1,0 +1,7 @@
+public enum SCENES
+{
+	LOADING_LEVEL,
+	MAP,
+	GAME_TYPE_MENU,
+	GAME_LEVEL
+}

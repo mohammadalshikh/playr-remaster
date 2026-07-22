@@ -1,0 +1,5 @@
+public enum STREAK_MODIFIER_OPTION
+{
+	OVERWRITE,
+	MERGE
+}

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 
@@ -162,7 +162,7 @@ public class Stadium : MonoBehaviour
 			GameObject[] goal_objects = m_goal_objects;
 			foreach (GameObject gameObject in goal_objects)
 			{
-				gameObject.active = visible;
+				gameObject.SetActive(visible);
 			}
 		}
 	}

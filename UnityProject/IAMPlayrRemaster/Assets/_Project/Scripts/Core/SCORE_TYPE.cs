@@ -1,0 +1,8 @@
+public enum SCORE_TYPE
+{
+	POINTS,
+	LIVES,
+	SECONDS,
+	MULTIPLIER,
+	SHIELD
+}

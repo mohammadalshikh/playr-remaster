@@ -1,0 +1,6 @@
+public enum EFFECT
+{
+	NONE,
+	FLICKERING,
+	FADING
+}

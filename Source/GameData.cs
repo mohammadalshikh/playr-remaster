@@ -1,10 +1,11 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
 public class GameData : MonoBehaviour
 {
 	public enum GAME_LOCATION
@@ -912,11 +913,11 @@ public class GameData : MonoBehaviour
 		UnityEngine.Object.DontDestroyOnLoad(Instance);
 		Time.fixedDeltaTime = 0.01f;
 		Time.timeScale = 1f;
-		if (Application.loadedLevel == 0)
+		if (SceneManager.GetActiveScene().buildIndex == 0)
 		{
 			StartCoroutine(LoadLevel(SCENES.MAP));
 		}
-		else if (Application.loadedLevel == 3)
+		else if (SceneManager.GetActiveScene().buildIndex == 3)
 		{
 			b_debug_mode = true;
 		}
@@ -955,7 +956,7 @@ public class GameData : MonoBehaviour
 		{
 			return;
 		}
-		switch (Application.loadedLevel)
+		switch (SceneManager.GetActiveScene().buildIndex)
 		{
 		case 1:
 			EtceteraAndroid.showAlert("I AM PLAYR", "Do you really want to quit?", "No", "Quit");
@@ -1030,12 +1031,12 @@ public class GameData : MonoBehaviour
 	public IEnumerator LoadLevel(SCENES scene)
 	{
 		PlayerPrefs.Save();
-		m_previous_loaded_scene = Application.loadedLevelName;
-		if (Application.loadedLevel != 3)
+		m_previous_loaded_scene = SceneManager.GetActiveScene().name;
+		if (SceneManager.GetActiveScene().buildIndex != 3)
 		{
 			m_coming_from_game = false;
 		}
-		Application.LoadLevel((int)scene);
+		SceneManager.LoadScene((int)scene);
 		Instance.PauseGame(pause: false);
 		yield return true;
 	}
@@ -1043,14 +1044,14 @@ public class GameData : MonoBehaviour
 	public IEnumerator LoadPreviousLevel()
 	{
 		PlayerPrefs.Save();
-		m_previous_loaded_scene = Application.loadedLevelName;
-		if (Application.loadedLevel != 3)
+		m_previous_loaded_scene = SceneManager.GetActiveScene().name;
+		if (SceneManager.GetActiveScene().buildIndex != 3)
 		{
 			m_coming_from_game = false;
 		}
-		if (Application.loadedLevel - 1 > 0)
+		if (SceneManager.GetActiveScene().buildIndex - 1 > 0)
 		{
-			Application.LoadLevel(Application.loadedLevel - 1);
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 		}
 		Instance.PauseGame(pause: false);
 		yield return true;

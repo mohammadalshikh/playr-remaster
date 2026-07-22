@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class WeatherManager : MonoSingleton<WeatherManager>
@@ -67,7 +67,7 @@ public class WeatherManager : MonoSingleton<WeatherManager>
 		{
 			if (cloud != null)
 			{
-				cloud.active = bShow;
+				cloud.SetActive(bShow);
 			}
 		}
 	}
@@ -100,7 +100,7 @@ public class WeatherManager : MonoSingleton<WeatherManager>
 		_isRaining = bRain;
 		foreach (GameObject rainPanel in _rainPanels)
 		{
-			rainPanel.active = _rainPanels.IndexOf(rainPanel) <= (int)type && bRain;
+			rainPanel.SetActive(_rainPanels).IndexOf(rainPanel) <= (int)type && bRain;
 		}
 		_rainSplash.SetActiveRecursively(type == RainType.HEAVY && bRain);
 		SetRainAngle(angle);
@@ -132,7 +132,7 @@ public class WeatherManager : MonoSingleton<WeatherManager>
 	{
 		if (!bActive || DeviceInfo.IsHighEnd || Application.platform == RuntimePlatform.OSXEditor)
 		{
-			_sun.gameObject.active = bActive;
+			_sun.gameObject.SetActive(bActive);
 			SunOffset(new Vector3(0f, 0f, Random.Range(-15f, 15f)));
 		}
 	}

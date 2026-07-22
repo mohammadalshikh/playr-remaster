@@ -1,0 +1,7 @@
+public enum SPINNER_TYPE
+{
+	TOTAL,
+	SCORE,
+	STREAK,
+	CURL
+}

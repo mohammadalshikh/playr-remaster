@@ -1,0 +1,6 @@
+public enum MINIGAME_TYPE
+{
+	WALL,
+	PASSING,
+	SHOOTING
+}

@@ -1,0 +1,8 @@
+public enum PROGRESS_PANEL_TYPE
+{
+	NONE,
+	SHOTS,
+	LIVES,
+	SHIELD,
+	RUSH
+}

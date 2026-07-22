@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
 public class MatchFitnessView : View
 {
 	public enum MatchFitnessViewState
@@ -45,7 +46,7 @@ public class MatchFitnessView : View
 		}
 		if (MonoSingleton<WebIntegrationManager>.IsInitialized)
 		{
-			if (Application.loadedLevel != 3)
+			if (SceneManager.GetActiveScene().buildIndex != 3)
 			{
 				MonoSingleton<WebIntegrationManager>.Instance.RefreshData();
 				MonoSingleton<WebIntegrationManager>.Instance.WebUserDataReceived += HandleWebUserDataReceived;

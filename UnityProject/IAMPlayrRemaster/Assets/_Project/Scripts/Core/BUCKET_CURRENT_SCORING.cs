@@ -1,0 +1,8 @@
+public enum BUCKET_CURRENT_SCORING
+{
+	NONE,
+	OUTER,
+	INNER,
+	BUCKET,
+	SWEET
+}

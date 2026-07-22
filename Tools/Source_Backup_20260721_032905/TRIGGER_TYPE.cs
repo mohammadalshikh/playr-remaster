@@ -1,0 +1,6 @@
+public enum TRIGGER_TYPE
+{
+	ON_ENTER,
+	ON_EXIT,
+	ON_STAY
+}
